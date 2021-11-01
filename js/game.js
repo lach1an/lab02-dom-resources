@@ -99,9 +99,17 @@ function moveBear(e) {
 $("#dBear").on("keyup", function(){
   
   console.log("keyup");
-  console.log($("#dBear").val());
+  var db = $("#dBear").val();
   
-  bear.dBear = $("#dBear").val();
+  db = Number(db); //try converting the content of the input to a number
+
+ if (isNaN(db)) { //check that the input field contains a valid number
+  window.alert("Invalid speeed of bear");
+  return;
+ }
+ else{
+   bear.dBear = db;
+  }
   
 });
 
