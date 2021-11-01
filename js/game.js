@@ -96,6 +96,11 @@ function moveBear(e) {
 }
 
 
+$("#dBear").on("change", function(){
+  
+  bear.dBear = $("#dBear").val();
+  
+});
 
 
 
