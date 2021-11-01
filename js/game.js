@@ -219,6 +219,7 @@ function moveBees() {
 }
 
   function updateBees() { // update loop for game
+      console.log("update");
      //move the bees randomly
      moveBees();
     
