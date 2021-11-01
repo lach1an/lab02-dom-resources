@@ -26,25 +26,20 @@ function Bear() {
    };
   
 }
+  
+  // setup bear var as global
+  var bear;
 
-
-  // create new bear on page load
+  // assign bear object on page load
   $(document).ready(function start(){
   
-    var bear = new Bear();
+    bear = new Bear();
   
   });
 
   
   // bind move function to keyup 
-  $(document).on("keyup", function(e){
-      
-      console.log(e.keyCode);
-    
-      // pass keycode to move function
-      moveBear(e);
-  
-  });
+  $(document).on("keyup", moveBear(e));
 
 function moveBear(e) {
   
