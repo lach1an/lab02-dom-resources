@@ -64,7 +64,7 @@ function Bear() {
   });
 
 
-$("#dBear").on("keyup", function(){
+$("#dBear").on("blur", function(){
   
   window.alert("keyup");
   var db = $("#dBear").val();
