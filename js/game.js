@@ -93,3 +93,86 @@ function moveBear(e) {
 }
 
 
+
+
+
+
+class Bee {
+   constructor(beeNumber) {
+     //the HTML element corresponding to the IMG of the bee
+     this.bee = createBeeImg(beeNumber);
+     //iits HTML ID
+     this.id = this.bee.attr("id");
+     //the left position (x)
+     this.x = this.bee.offset().left;
+     //the top position (y)
+     this.y = this.bee.offset().top;
+     
+     this.move = function(dx, dy) {
+       //move the bees by dx, dy
+       this.x += dx;
+       this.y += dy;
+       this.display();
+     };
+     
+    this.fitBounds = function() {
+
+     let parent = this.bee.parent();
+
+     let iw = this.bee.width();
+     let ih = this.bee.height();
+
+     let l = parent.offset().left;
+     let t = parent.offset().top;
+
+     let w = parent.width();
+     let h = parent.height();
+
+     if (this.x < 0) this.x = 0;
+     if (this.x > w - iw) this.x = w - iw;
+     if (this.y < 0) this.y = 0;
+     if (this.y > h - ih) this.y = h - ih;
+
+   };     
+     
+    this.display = function() {
+     this.bee.css("left", this.x + "px");
+     this.bee.css("top",  this.y + "px");
+     
+     this.bee.css("display", "absolute");
+      
+   };  
+  }
+}
+
+function createBeeImg(wNum) {
+  
+   //get dimension and position of board div
+   let boardDiv = $("#board");
+   let boardDivW = boardDiv.width();
+   let boardDivH = boardDiv.height();
+   let boardDivX = boardDiv.offset().left;
+   let boardDivY = boardDiv.offset().top;
+  
+  //create the IMG element
+   let img = $("#bear").after('<img></img>');
+   img.attr("src", "images/bee.gif");
+   img.attr("width", "100");
+   img.attr("alt", "A bee!");
+   img.attr("id", "bee" + wNum);
+   img.attr("class", "bee"); //set class of html tag img
+  
+  //add the IMG element to the DOM as a child of the board div
+   img.css("display", "absolute");
+  
+  //set initial position 
+   let x = getRandomInt(boardDivW);
+   let y = getRandomInt(boardDivH);
+   img.css("left", (boardDivX + x) + "px");
+   img.css("top", (y) + "px");
+   
+  //return the img object
+   return img;
+}
+
+
