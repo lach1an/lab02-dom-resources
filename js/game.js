@@ -215,6 +215,8 @@ function moveBees() {
      let dx = getRandomInt(2 * speed) - speed;
      let dy = getRandomInt(2 * speed) - speed;
      bees[i].move(dx, dy);
+     
+     isHit(bees[i], bear); //we add this to count stings
    }
 }
 
@@ -227,6 +229,42 @@ function moveBees() {
      let period = $("#periodTimer").val();
      //update the timer for the next move
      updateTimer = setTimeout('updateBees()', period);
+}
+
+
+function isHit(defender, offender) {
+  
+   if (overlap(defender, offender)) { //check if the two image overlap
+     let score = $("#hits").html();
+     score = Number(score) + 1; //increment the score
+     $("#hits").html(score); //display the new score
+   }
+}
+
+function overlap(element1, element2) {
+   //consider the two rectangles wrapping the two elements
+   //rectangle of the first element
+   left1 = $(element1).offset().left; 
+   top1 = $(element1).offset().top; 
+   right1 = $(element1).offset().left + $(element1).width(); 
+   bottom1 = $(element1).offset().top + $(element1).height(); 
+   
+  //rectangle of the second element
+   left2 = $(element2).offset().left; 
+   top2 = $(element2).offset().top; 
+   right2 = $(element2).offset().left + $(element2).width(); 
+   bottom2 = $(element2).offset().top + $(element2).height(); 
+  
+  //calculate the intersection of the two rectangles
+   x_intersect = Math.max(0, Math.min(right1, right2) - Math.max(left1, left2));
+   y_intersect = Math.max(0, Math.min(bottom1, bottom2) - Math.max(top1, top2));
+   intersectArea = x_intersect * y_intersect;
+  
+  //if intersection is nil no hit
+   if (intersectArea == 0 || isNaN(intersectArea)) {
+     return false;
+   }
+    return true;
 }
 
 
