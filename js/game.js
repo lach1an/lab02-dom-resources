@@ -224,11 +224,18 @@ function moveBees() {
       console.log("update");
      //move the bees randomly
      moveBees();
+      
+     let score = $("#hits").html();
+     if (score >= 1000){
+      clearTimeout(updateTimer);
+      window.alert("GAME OVER");
+     }
+     
     
      //use a fixed update period
      let period = $("#periodTimer").val();
      //update the timer for the next move
-     updateTimer = setTimeout('updateBees()', period);
+     updateTimer = setTimeout(updateBees(), period);
 }
 
 
