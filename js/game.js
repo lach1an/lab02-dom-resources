@@ -98,6 +98,7 @@ function moveBear(e) {
 
 $("#dBear").on("keyup", function(){
   
+  console.log("keyup");
   console.log($("#dBear").val());
   
   bear.dBear = $("#dBear").val();
