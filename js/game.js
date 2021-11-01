@@ -11,6 +11,27 @@ function Bear() {
   
    this.x = this.offset.left;
    this.y = this.offset.top;
+  
+    this.fitBounds = function() {
+
+     let parent = this.bear.parent();
+
+     let iw = this.bear.width();
+     let ih = this.bear.height();
+
+     let l = parent.offset().left;
+     let t = parent.offset().top;
+
+     let w = parent.width();
+     let h = parent.height();
+
+     if (this.x < 0) this.x = 0;
+     if (this.x > w - iw) this.x = w - iw;
+     if (this.y < 0) this.y = 0;
+     if (this.y > h - ih) this.y = h - ih;
+
+   };
+
 
    this.move = function(xDir, yDir) {
      
@@ -72,22 +93,3 @@ function moveBear(e) {
 }
 
 
-this.fitBounds = function() {
-  
-   let parent = this.bear.parent();
-  
-   let iw = this.bear.width();
-   let ih = this.bear.height();
-  
-   let l = parent.offset().left;
-   let t = parent.offset().top;
-   
-   let w = parent.width();
-   let h = parent.height();
-  
-   if (this.x < 0) this.x = 0;
-   if (this.x > w - iw) this.x = w - iw;
-   if (this.y < 0) this.y = 0;
-   if (this.y > h - ih) this.y = h - ih;
-  
- };
