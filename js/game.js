@@ -33,4 +33,4 @@ $(document).ready(function start(){
   
     var bear = new Bear();
   
-  )};
+  });
