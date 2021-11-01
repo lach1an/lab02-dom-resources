@@ -53,6 +53,7 @@ function Bear() {
   // setup bear and bee vars as global
   var bear;
   var bees = new Array();
+  var updateTimer; 
 
   // assign bear object on page load
   $(document).ready(function start(){
@@ -242,6 +243,7 @@ function moveBees() {
 function isHit(defender, offender) {
   
    if (overlap(defender, offender)) { //check if the two image overlap
+     console.log("hit");
      let score = $("#hits").html();
      score = Number(score) + 1; //increment the score
      $("#hits").html(score); //display the new score
