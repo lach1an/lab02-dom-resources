@@ -66,7 +66,7 @@ function Bear() {
 
 $("#dBear").on("keyup", function(){
   
-  console.log("keyup");
+  window.alert("keyup");
   var db = $("#dBear").val();
   
   db = Number(db); //try converting the content of the input to a number
