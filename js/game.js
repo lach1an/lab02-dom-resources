@@ -96,7 +96,7 @@ function moveBear(e) {
 }
 
 
-$("#dBear").on("change", function(){
+$("#dBear").on("keyup", function(){
   
   console.log($("#dBear").val());
   
