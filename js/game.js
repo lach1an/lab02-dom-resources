@@ -39,6 +39,8 @@ function Bear() {
   // bind move function to keyup 
   $(document).on("keyup", function(e){
       
+      console.log("keyup");
+    
       // pass keycode to move function
       moveBear(e.keyCode);
   
