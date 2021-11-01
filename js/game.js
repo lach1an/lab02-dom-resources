@@ -60,12 +60,26 @@ function Bear() {
   
     bear = new Bear();
     makeBees();
-    
-    db = $("#dBear").val();
-    window.alert(db);
-  
+      
   });
 
+
+$("#dBear").on("keyup", function(){
+  
+  console.log("keyup");
+  var db = $("#dBear").val();
+  
+  db = Number(db); //try converting the content of the input to a number
+
+ if (isNaN(db)) { //check that the input field contains a valid number
+  window.alert("Invalid speeed of bear");
+  return;
+ }
+ else{
+   bear.dBear = db;
+  }
+  
+});
   
   // bind move function to keyup 
   $(document).on("keyup", function(e){
@@ -99,22 +113,7 @@ function moveBear(e) {
 }
 
 
-$("#dBear").on("keyup", function(){
-  
-  console.log("keyup");
-  var db = $("#dBear").val();
-  
-  db = Number(db); //try converting the content of the input to a number
 
- if (isNaN(db)) { //check that the input field contains a valid number
-  window.alert("Invalid speeed of bear");
-  return;
- }
- else{
-   bear.dBear = db;
-  }
-  
-});
 
 
 
