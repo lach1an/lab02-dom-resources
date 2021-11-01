@@ -39,7 +39,10 @@ function Bear() {
 
   
   // bind move function to keyup 
-  $(document).on("keyup", moveBear(e));
+  $(document).on("keyup", function(e){
+      // pass event to move
+       moveBear(e);
+  });
 
 function moveBear(e) {
   
