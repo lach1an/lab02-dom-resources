@@ -157,7 +157,7 @@ function createBeeImg(wNum) {
    let boardDivY = boardDiv.offset().top;
   
   //create the IMG element
-   let img = $("#bear").after('<img></img>');
+   let img = $("<img></img>").appendTo("#board");
    img.attr("src", "images/bee.gif");
    img.attr("width", "100");
    img.attr("alt", "A bee!");
