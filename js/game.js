@@ -50,13 +50,15 @@ function Bear() {
   
 }
   
-  // setup bear var as global
+  // setup bear and bee vars as global
   var bear;
+  var bees = new Array();
 
   // assign bear object on page load
   $(document).ready(function start(){
   
     bear = new Bear();
+    makeBees();
   
   });
 
@@ -173,6 +175,34 @@ function createBeeImg(wNum) {
    
   //return the img object
    return img;
+}
+
+function getRandomInt(max){
+  
+  return Math.floor((Math.random() * max) + 1);
+  
+}
+
+
+function makeBees() {
+   //get number of bees specified by the user
+   let nbBees = $("#nbBees").val();
+   nbBees = Number(nbBees); //try converting the content of the input to a number
+  
+   if (isNaN(nbBees)) { //check that the input field contains a valid number
+    window.alert("Invalid number of bees");
+    return;
+   }
+  
+   //create bees 
+   let i = 1;
+   while (i <= nbBees) {
+     var num = i;
+     var bee = new Bee(num); //create object and its IMG element
+     bee.display(); //display the bee
+     bees.push(bee); //add the bee object to the bees array
+     i++;
+   }
 }
 
 
