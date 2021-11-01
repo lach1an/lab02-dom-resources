@@ -60,6 +60,9 @@ function Bear() {
   
     bear = new Bear();
     makeBees();
+    
+    db = $("#dBear").val();
+    window.alert(db);
   
   });
 
