@@ -138,9 +138,9 @@ class Bee {
      //iits HTML ID
      this.id = this.bee.attr("id");
      //the left position (x)
-     this.x = this.bee.offset().left;
+     this.x = this.bee.css('left');
      //the top position (y)
-     this.y = this.bee.offset().top;
+     this.y = this.bee.css('top');
      
      this.move = function(dx, dy) {
        //move the bees by dx, dy
@@ -256,6 +256,10 @@ function moveBees() {
    for (let i = 0; i < bees.length; i++) {
      let dx = getRandomInt(2 * speed) - speed;
      let dy = getRandomInt(2 * speed) - speed;
+     
+     console.log('dx: ' + dx);
+     console.log('dy: ' + dy);
+     
      bees[i].move(dx, dy);
      
      isHit(bees[i], bear); //we add this to count stings
@@ -263,10 +267,12 @@ function moveBees() {
 }
 
   function updateBees() { // update loop for game
-      console.log("update");
-     //move the bees randomly
+      console.log("tick");
+    
+     //move the bees randomly -- and check for hits
      moveBees();
       
+    // check if score is high enough to end game
      let score = $("#hits").html();
      if (score >= 1000){
       clearTimeout(updateTimer);
