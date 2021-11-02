@@ -211,9 +211,6 @@ function createBeeImg(wNum) {
    console.log("x: " + x);
    console.log("y: " + y);
   
-   img.css("left", x);
-   img.css("top", y);
-    
    // set coords and display type
    img.css({left: x, top: y, position: 'absolute'});
 
