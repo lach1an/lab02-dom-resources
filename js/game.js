@@ -201,8 +201,7 @@ function createBeeImg(wNum) {
    img.attr("id", "bee" + wNum);
    img.attr("class", "bee"); //set class of html tag img
   
-  //add the IMG element to the DOM as a child of the board div
-   img.css("display", "absolute");
+
   
  
   //set initial position 
@@ -214,8 +213,10 @@ function createBeeImg(wNum) {
   
    img.css("left", x);
    img.css("top", y);
-   
-  console.log('dims set');
+    
+   // set coords and display type
+   img.css({left: x, top: y, position: 'absolute'});
+
   //return the img object
    return img;
 }
