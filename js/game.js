@@ -142,9 +142,6 @@ class Bee {
      //the top position (y)
      this.y = this.bee.offset().top;
      
-     // sometimes default values are out of range -- check just in case
-     this.fitBounds();
-     
      this.move = function(dx, dy) {
        //move the bees by dx, dy
        this.x += dx;
