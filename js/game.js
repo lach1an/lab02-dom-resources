@@ -44,10 +44,10 @@ function Bear() {
    };
 
    this.display = function() {
-     this.bear.css("left", this.x + "px");
-     this.bear.css("top",  this.y + "px");
+     this.bear.css("left", this.x);
+     this.bear.css("top",  this.y);
      
-     this.bear.css("display", "absolute");
+     this.bear.css("display", "relative");
    };
   
 }
