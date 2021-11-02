@@ -59,11 +59,13 @@ function Bear() {
 
   // assign bear object on page load
   $(document).ready(function start(){
-  
+    
+    console.log('page loaded!!!');
+    
     bear = new Bear();
     makeBees();
       
-     console.log('page loaded!!!')
+
       
   $("#dBear").on("blur", function(){
 
@@ -198,7 +200,7 @@ function createBeeImg(wNum) {
    let x = getRandomInt(boardDivW);
    let y = getRandomInt(boardDivH);
    img.css("left", (boardDivX + x) + "px");
-   img.css("top", (y) + "px");
+   img.css("top", y + "px");
    
   //return the img object
    return img;
