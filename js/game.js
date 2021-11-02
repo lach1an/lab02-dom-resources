@@ -37,9 +37,12 @@ function Bear() {
 
    this.move = function(xDir, yDir) {
      
-    this.fitBounds();
+    
     this.x += this.dBear * xDir;
     this.y += this.dBear * yDir;
+    
+     // fit to bounds then display
+    this.fitBounds();
     this.display();
    };
 
@@ -143,6 +146,9 @@ class Bee {
        //move the bees by dx, dy
        this.x += dx;
        this.y += dy;
+       
+       // check in bounds and display
+       this.fitBounds();
        this.display();
      };
      
