@@ -176,6 +176,14 @@ class Bee {
   }
 }
 
+function getRandomInt(max){
+  
+  var x = Math.floor((Math.random() * max) + 1);
+  console.log(x);
+  return x;
+  
+}
+
 function createBeeImg(wNum) {
   
    //get dimension and position of board div
@@ -196,6 +204,8 @@ function createBeeImg(wNum) {
   //add the IMG element to the DOM as a child of the board div
    img.css("display", "absolute");
   
+    console.log(img.attr("id"));
+  
   //set initial position 
    let x = getRandomInt(boardDivW);
    let y = getRandomInt(boardDivH);
@@ -206,13 +216,7 @@ function createBeeImg(wNum) {
    return img;
 }
 
-function getRandomInt(max){
-  
-  var x = Math.floor((Math.random() * max) + 1);
-  console.log(x);
-  return x;
-  
-}
+
 
 
 function makeBees() {
