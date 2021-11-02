@@ -80,6 +80,13 @@ $("#dBear").on("blur", function(){
   }
   
 });
+
+
+$("#dBear").on("click", function()){
+    
+         window.alert("CLICKED!!!!!");
+               
+});
   
   // bind move function to keyup 
   $(document).on("keyup", function(e){
