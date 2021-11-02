@@ -176,7 +176,7 @@ class Bee {
      this.bee.css("left", this.x + "px");
      this.bee.css("top",  this.y + "px");
      
-     this.bee.css("position", "relative");
+     this.bee.css("position", "absolute");
       
    };  
   }
@@ -218,7 +218,7 @@ function createBeeImg(wNum) {
    console.log("y: " + y);
   
    // set coords and display type
-   img.css({left: x, top: y, position: 'relative'});
+   img.css({left: x, top: y, position: 'absolute'});
 
   //return the img object
    return img;
