@@ -1,8 +1,14 @@
-$("#dBear").blur(function(){
+$(".bear-speed-input").blur(function(){
     
    console.log("!!!")
                
 });
+
+
+$('input').click(function(){
+   console.log('this works?'); 
+});
+
 
 function Bear() {
   
