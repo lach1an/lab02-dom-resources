@@ -111,6 +111,10 @@ function Bear() {
        //update the timer for the next move
        updateTimer = setTimeout(updateBees(), period);
      }
+    
+    
+    // call update to start loop
+    updateBees();
 
   });
 
@@ -232,9 +236,6 @@ function createBeeImg(wNum) {
    let x = getRandomInt(boardDivW);
    let y = getRandomInt(boardDivH);
     
-   console.log("x: " + x);
-   console.log("y: " + y);
-  
    // set coords and display type
    img.css({left: x, top: y, position: 'absolute'});
 
