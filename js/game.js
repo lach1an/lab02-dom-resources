@@ -1,6 +1,6 @@
-$(document).on("click", "#bBear", function(){
+$("#dBear").click(function(){
     
-   window.alert("CLICKED!!!!!");
+   console.log("CLICKED!!!")
                
 });
 
