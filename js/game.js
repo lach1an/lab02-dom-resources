@@ -67,6 +67,8 @@ function Bear() {
     bear = new Bear();
     makeBees();
       
+     console.log('page loaded!!!')
+      
   });
 
 
