@@ -82,7 +82,7 @@ $("#dBear").on("blur", function(){
 });
 
 
-$("#dBear").on("click", function()){
+$("#dBear").on("click", function(){
     
          window.alert("CLICKED!!!!!");
                
