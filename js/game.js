@@ -65,17 +65,6 @@ function Bear() {
       
      console.log('page loaded!!!')
       
-    $(".bear-speed-input").blur(function(){
-
-       console.log("!!!")
-
-    });
-
-
-    $('input').click(function(){
-       console.log('this works?'); 
-    });
-
   $("#dBear").on("blur", function(){
 
       window.alert("keyup");
@@ -92,6 +81,12 @@ function Bear() {
       }
 
    });
+  
+      // bind move function to keyup 
+  $(document).on("keyup", function(e){
+        // pass event to move
+         moveBear(e);
+    });
 
 
   });
@@ -100,11 +95,6 @@ function Bear() {
 
 
   
-  // bind move function to keyup 
-  $(document).on("keyup", function(e){
-      // pass event to move
-       moveBear(e);
-  });
 
 function moveBear(e) {
   
