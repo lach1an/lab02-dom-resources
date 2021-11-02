@@ -212,9 +212,10 @@ function createBeeImg(wNum) {
    console.log("x: " + x);
    console.log("y: " + y);
   
-   img.css("left", x + "px");
-   img.css("top", y + "px");
+   img.css("left", x);
+   img.css("top", y);
    
+  console.log('dims set');
   //return the img object
    return img;
 }
