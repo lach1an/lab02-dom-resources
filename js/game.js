@@ -91,7 +91,26 @@ function Bear() {
         // pass event to move
          moveBear(e);
     });
+    
+      function updateBees() { // update loop for game
+        console.log("tick");
 
+       //move the bees randomly -- and check for hits
+       moveBees();
+
+      // check if score is high enough to end game
+       let score = $("#hits").html();
+       if (score >= 1000){
+        clearTimeout(updateTimer);
+        window.alert("GAME OVER");
+       }
+
+
+       //use a fixed update period
+       let period = $("#periodTimer").val();
+       //update the timer for the next move
+       updateTimer = setTimeout(updateBees(), period);
+     }
 
   });
 
@@ -264,26 +283,6 @@ function moveBees() {
      
      isHit(bees[i], bear); //we add this to count stings
    }
-}
-
-  function updateBees() { // update loop for game
-      console.log("tick");
-    
-     //move the bees randomly -- and check for hits
-     moveBees();
-      
-    // check if score is high enough to end game
-     let score = $("#hits").html();
-     if (score >= 1000){
-      clearTimeout(updateTimer);
-      window.alert("GAME OVER");
-     }
-     
-    
-     //use a fixed update period
-     let period = $("#periodTimer").val();
-     //update the timer for the next move
-     updateTimer = setTimeout(updateBees(), period);
 }
 
 
