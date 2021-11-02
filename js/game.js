@@ -1,6 +1,6 @@
-$("#dBear").click(function(){
+$("#dBear").blur(function(){
     
-   console.log("CLICKED!!!")
+   console.log("!!!")
                
 });
 
