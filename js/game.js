@@ -205,7 +205,7 @@ function createBeeImg(wNum) {
   
  
   //set initial position 
-   let x = boardDivW + getRandomInt(boardDivW);
+   let x = getRandomInt(boardDivW);
    let y = getRandomInt(boardDivH);
     
    console.log("x: " + x);
