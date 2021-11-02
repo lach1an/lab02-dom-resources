@@ -67,7 +67,6 @@ function Bear() {
       
   $("#dBear").on("blur", function(){
 
-      window.alert("keyup");
       var db = $("#dBear").val();
 
       db = Number(db); //try converting the content of the input to a number
@@ -207,7 +206,9 @@ function createBeeImg(wNum) {
 
 function getRandomInt(max){
   
-  return Math.floor((Math.random() * max) + 1);
+  var x = Math.floor((Math.random() * max) + 1);
+  console.log(x);
+  return x;
   
 }
 
