@@ -204,12 +204,15 @@ function createBeeImg(wNum) {
   //add the IMG element to the DOM as a child of the board div
    img.css("display", "absolute");
   
-    console.log(img.attr("id"));
-  
+ 
   //set initial position 
-   let x = getRandomInt(boardDivW);
+   let x = boardDivW + getRandomInt(boardDivW);
    let y = getRandomInt(boardDivH);
-   img.css("left", (boardDivX + x) + "px");
+    
+   console.log("x: " + x);
+   console.log("y: " + y);
+  
+   img.css("left", x + "px");
    img.css("top", y + "px");
    
   //return the img object
