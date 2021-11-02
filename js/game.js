@@ -1,13 +1,3 @@
-$(".bear-speed-input").blur(function(){
-    
-   console.log("!!!")
-               
-});
-
-
-$('input').click(function(){
-   console.log('this works?'); 
-});
 
 
 function Bear() {
@@ -75,25 +65,37 @@ function Bear() {
       
      console.log('page loaded!!!')
       
+    $(".bear-speed-input").blur(function(){
+
+       console.log("!!!")
+
+    });
+
+
+    $('input').click(function(){
+       console.log('this works?'); 
+    });
+
+  $("#dBear").on("blur", function(){
+
+      window.alert("keyup");
+      var db = $("#dBear").val();
+
+      db = Number(db); //try converting the content of the input to a number
+
+     if (isNaN(db)) { //check that the input field contains a valid number
+      window.alert("Invalid speeed of bear");
+      return;
+     }
+     else{
+       bear.dBear = db;
+      }
+
+   });
+
+
   });
 
-
-$("#dBear").on("blur", function(){
-  
-  window.alert("keyup");
-  var db = $("#dBear").val();
-  
-  db = Number(db); //try converting the content of the input to a number
-
- if (isNaN(db)) { //check that the input field contains a valid number
-  window.alert("Invalid speeed of bear");
-  return;
- }
- else{
-   bear.dBear = db;
-  }
-  
-});
 
 
 
