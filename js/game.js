@@ -173,10 +173,9 @@ class Bee {
    };     
      
     this.display = function() {
-     this.bee.css("left", this.x + "px");
-     this.bee.css("top",  this.y + "px");
-     
-     this.bee.css("position", "absolute");
+        
+      // set x and y and display type
+      this.bee.css({left: this.x, top: this.y, position: 'absolute'});
       
    };  
   }
