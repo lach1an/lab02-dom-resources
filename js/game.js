@@ -1,4 +1,4 @@
-$("#dBear").on("click", function(){
+$(document).on("click", "#bBear", function(){
     
    window.alert("CLICKED!!!!!");
                
