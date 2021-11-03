@@ -7,8 +7,8 @@
   lastStingTime = new Date();
   var updateTimer; 
 
-  // assign bear object on page load
-  $(document).ready(function start(){
+  // assign bear object on start
+  $('#start-btn').on('click', function start(){
     
     console.log('page loaded!!!');
     
