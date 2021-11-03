@@ -9,14 +9,18 @@
 
 $(document).ready(function(){
     console.log('page loaded!!!');
-     // hide reset btn until; game start
+     // hide reset btn until game start
     $('#reset-btn').hide();
  
-  // assign bear object on start
-  $('#start-btn').on('click', start());
+  // start game on btn press
+  $('#start-btn').on('click', function(){
+      start();
+   });
  
       // reset game using params currently in inputs
-   $('#reset-btn').on('click', restart());
+   $('#reset-btn').on('click', function(){
+     restart();                 
+   });
       
   $("#dBear").on("blur", function(){
 
