@@ -302,8 +302,9 @@ function isHit(defender, offender) {
      if (longestDuration < thisDuration) longestDuration = thisDuration;
      }
     
-     durRounded = (longestDuration/1000).toFixed(2)
-     $('#duration').html(durRounded);
+     let durRounded = Number(longestDuration/1000);
+     console.log(durRounded);
+     $('#duration').html(durRounded.toFixed(2));
   
    }
 }
