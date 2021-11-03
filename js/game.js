@@ -276,10 +276,7 @@ function moveBees() {
    for (let i = 0; i < bees.length; i++) {
      let dx = getRandomInt(2 * speed) - speed;
      let dy = getRandomInt(2 * speed) - speed;
-     
-     console.log('dx: ' + dx);
-     console.log('dy: ' + dy);
-     
+         
      bees[i].move(dx, dy);
      
      isHit(bees[i], bear); //we add this to count stings
