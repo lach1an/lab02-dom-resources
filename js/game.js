@@ -300,6 +300,11 @@ function isHit(defender, offender) {
 function overlap(element1, element2) {
    //consider the two rectangles wrapping the two elements
    //rectangle of the first element
+  
+    console.log('e1: ' + element1.id);
+    console.log('e2: ' + element2.id);
+  
+  
    left1 = $(element1.id).offset().left; 
    top1 = $(element1.id).offset().top; 
    right1 = $(element1.id).offset().left + element1.width(); 
