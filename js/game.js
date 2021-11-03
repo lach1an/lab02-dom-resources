@@ -300,21 +300,21 @@ function isHit(defender, offender) {
 function overlap(element1, element2) {
    //consider the two rectangles wrapping the two elements
    //rectangle of the first element
+    
+  // get selectors for elements
+   e1 = '#' + element1.id;
+   e2 = '#' + element2.id;
   
-    console.log('e1: ' + element1.id);
-    console.log('e2: ' + element2.id);
-  
-  
-   left1 = $(element1.id).offset().left; 
-   top1 = $(element1.id).offset().top; 
-   right1 = $(element1.id).offset().left + element1.width(); 
-   bottom1 = $(element1.id).offset().top + element1.height(); 
+   left1 = $(e1).offset().left; 
+   top1 = $(e1).offset().top; 
+   right1 = $(e1).offset().left + element1.width(); 
+   bottom1 = $(e1).offset().top + element1.height(); 
    
   //rectangle of the second element
-   left2 = $(element2.id).offset().left; 
-   top2 = $(element2.id).offset().top; 
-   right2 = $(element2.id).offset().left + element2.width(); 
-   bottom2 = $(element2.id).offset().top + element2.height(); 
+   left2 = $(e2).offset().left; 
+   top2 = $(e2).offset().top; 
+   right2 = $(e2).offset().left + element2.width(); 
+   bottom2 = $(e2).offset().top + element2.height(); 
   
   //calculate the intersection of the two rectangles
    x_intersect = Math.max(0, Math.min(right1, right2) - Math.max(left1, left2));
