@@ -54,23 +54,23 @@ $(document).ready(function(){
 
    });
   
+    function restart(){
 
-   
+      //end loop
+      clearTimeout(updateTimer);
+
+      // remove all bees from board
+      $('.bee').remove();
+
+      // start game
+      start();
+
+    }
+
 });
 
 
-function restart(){
-  
-  //end loop
-  clearTimeout(updateTimer);
-  
-  // remove all bees from board
-  $('.bee').remove();
- 
-  // start game
-  start();
- 
-}
+
 
 
 function Bear() {
