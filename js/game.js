@@ -211,8 +211,8 @@ class Bee {
        this.x += dx;
        this.y += dy;
        
-       console.log(this.id + ': x => ' + x);
-       console.log(this.id + ': y => ' + y);
+       console.log(this.id + ': x => ' + this.x);
+       console.log(this.id + ': y => ' + this.y);
        
        // check in bounds and display
        this.fitBounds();
