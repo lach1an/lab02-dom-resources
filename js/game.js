@@ -8,14 +8,26 @@
   var updateTimer; 
 
 $(document).ready(function(){
-
+    console.log('page loaded!!!');
+ 
   // assign bear object on start
   $('#start-btn').on('click', function start(){
     
-    console.log('page loaded!!!');
-    
     bear = new Bear();
     makeBees();
+   
+   // disable start button to prevent bee spamming
+   $('#start-btn').attr('disabled', true);
+   
+
+   // bind move function to keyup 
+   $(document).on("keyup", function(e){
+         // pass event to move
+          moveBear(e);
+     });
+
+     // inital call to start loop
+       updateBees();
    
   });
       
@@ -37,14 +49,7 @@ $(document).ready(function(){
 
    });
   
-      // bind move function to keyup 
-  $(document).on("keyup", function(e){
-        // pass event to move
-         moveBear(e);
-    });
-      
-    // inital call to start loop
-      updateBees();
+
    
 });
 
