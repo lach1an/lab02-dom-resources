@@ -34,18 +34,7 @@ $(document).ready(function(){
 
    });
   
-    function restart(){
 
-      //end loop
-      clearTimeout(updateTimer);
-
-      // remove all bees from board
-      $('.bee').remove();
-
-      // start game
-      start();
-
-    }
 
 });
 
@@ -68,10 +57,24 @@ function start(){
           moveBear(e);
      });
 
-     // inital call to start loop
-       updateBees();
+    // inital call to start loop
+      updateBees();
    
 };
+
+
+ function restart(){
+
+   //end loop
+   clearTimeout(updateTimer);
+
+   // remove all bees from board
+   $('.bee').remove();
+
+   // start game
+   start();
+
+ }
 
 
 function Bear() {
