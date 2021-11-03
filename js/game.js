@@ -24,7 +24,7 @@ $(document).ready(function(){
    });
  
  
-  $('#add-bee').on('click', function()){
+  $('#add-bee').on('click', function(){
     
        //create bees 
         let i = bees.length + 1;
