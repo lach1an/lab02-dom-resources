@@ -295,13 +295,13 @@ function isHit(defender, offender) {
      let newStingTime = new Date();
      let thisDuration = newStingTime - lastStingTime;
      lastStingTime = newStingTime;
-     let longestDuration = Number(duration.innerHTML);
+     let longestDuration = Number($('#duration').html());
      if (longestDuration === 0) {
      longestDuration = thisDuration;
      } else {
      if (longestDuration < thisDuration) longestDuration = thisDuration;
      }
-     document.getElementById("duration").innerHTML = longestDuration;
+     $('#duration').html(longestDuration);
   
    }
 }
