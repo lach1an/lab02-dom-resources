@@ -218,8 +218,6 @@ class Bee {
 
      let parent = this.bee.parent();
      
-     console.log(parent.attr('id'));
-
      let iw = this.bee.width();
      let ih = this.bee.height();
 
