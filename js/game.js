@@ -204,20 +204,16 @@ class Bee {
      //the top position (y)
      this.y = this.bee.css('top');
      
-            
-       console.log(this.id + ': x => ' + this.x);
-       console.log(this.id + ': y => ' + this.y);
-    
-    
+     // remove units from returned values
+     this.x -= 'px';
+     this.y -= 'px';
+     
      this.move = function(dx, dy) {
       
        
        //move the bees by dx, dy
        this.x += dx;
        this.y += dy;
-       
-       console.log(this.id + ': x => ' + this.x);
-       console.log(this.id + ': y => ' + this.y);
        
        // check in bounds and display
        this.fitBounds();
