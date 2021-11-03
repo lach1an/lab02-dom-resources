@@ -93,7 +93,6 @@ function Bear() {
     });
     
       function updateBees() { // update loop for game
-        console.log("tick");
 
        //move the bees randomly -- and check for hits
        moveBees();
