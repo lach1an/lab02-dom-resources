@@ -301,7 +301,8 @@ function isHit(defender, offender) {
      } else {
      if (longestDuration < thisDuration) longestDuration = thisDuration;
      }
-     $('#duration').html(longestDuration);
+     let durRounded = (longestDuration/1000).toFixed(2)
+     $('#duration').html(durRounded);
   
    }
 }
