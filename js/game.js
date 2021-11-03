@@ -204,6 +204,11 @@ class Bee {
      //the top position (y)
      this.y = this.bee.css('top');
      
+            
+       console.log(this.id + ': x => ' + this.x);
+       console.log(this.id + ': y => ' + this.y);
+    
+    
      this.move = function(dx, dy) {
       
        
