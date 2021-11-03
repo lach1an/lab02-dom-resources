@@ -91,8 +91,15 @@ function Bear() {
         // pass event to move
          moveBear(e);
     });
-    
-      function updateBees() { // update loop for game
+      
+    // inital call to start loop
+      updateBees();
+   
+  });
+
+
+
+  function updateBees() { // update loop for game
 
        //move the bees randomly -- and check for hits
        moveBees();
@@ -111,12 +118,6 @@ function Bear() {
        updateTimer = setTimeout(updateBees(), period);
      }
     
-   
-  });
-
-
-
-
   
 
 function moveBear(e) {
