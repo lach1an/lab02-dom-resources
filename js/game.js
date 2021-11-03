@@ -69,11 +69,13 @@ function start(){
 
  function restart(){
 
-   //end loop
-   clearTimeout(updateTimer);
+    console.log('restarting');
 
    // remove all bees from board
    $('.bee').remove();
+  
+     //end loop
+   clearTimeout(updateTimer);
 
    // start game
    start();
