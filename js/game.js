@@ -1,3 +1,48 @@
+ 
+  // setup bear and bee vars as global
+  var bear;
+  var bees = new Array();
+ 
+  //take start time and init timer
+  lastStingTime = new Date();
+  var updateTimer; 
+
+  // assign bear object on page load
+  $(document).ready(function start(){
+    
+    console.log('page loaded!!!');
+    
+    bear = new Bear();
+    makeBees();
+      
+
+      
+  $("#dBear").on("blur", function(){
+
+      var db = $("#dBear").val();
+
+      db = Number(db); //try converting the content of the input to a number
+
+     if (isNaN(db)) { //check that the input field contains a valid number
+      window.alert("Invalid speeed of bear");
+      return;
+     }
+     else{
+       bear.dBear = db;
+      }
+
+   });
+  
+      // bind move function to keyup 
+  $(document).on("keyup", function(e){
+        // pass event to move
+         moveBear(e);
+    });
+      
+    // inital call to start loop
+      updateBees();
+   
+  });
 
 
 function Bear() {
@@ -54,49 +99,7 @@ function Bear() {
    };
   
 }
-  
-  // setup bear and bee vars as global
-  var bear;
-  var bees = new Array();
-  var updateTimer; 
-
-  // assign bear object on page load
-  $(document).ready(function start(){
-    
-    console.log('page loaded!!!');
-    
-    bear = new Bear();
-    makeBees();
-      
-
-      
-  $("#dBear").on("blur", function(){
-
-      var db = $("#dBear").val();
-
-      db = Number(db); //try converting the content of the input to a number
-
-     if (isNaN(db)) { //check that the input field contains a valid number
-      window.alert("Invalid speeed of bear");
-      return;
-     }
-     else{
-       bear.dBear = db;
-      }
-
-   });
-  
-      // bind move function to keyup 
-  $(document).on("keyup", function(e){
-        // pass event to move
-         moveBear(e);
-    });
-      
-    // inital call to start loop
-      updateBees();
-   
-  });
-
+ 
 
 
   function updateBees() { // update loop for game
@@ -287,6 +290,19 @@ function isHit(defender, offender) {
      let score = $("#hits").html();
      score = Number(score) + 1; //increment the score
      $("#hits").html(score); //display the new score
+   
+      //calculate longest duration
+     let newStingTime = new Date();
+     let thisDuration = newStingTime - lastStingTime;
+     lastStingTime = newStingTime;
+     let longestDuration = Number(duration.innerHTML);
+     if (longestDuration === 0) {
+     longestDuration = thisDuration;
+     } else {
+     if (longestDuration < thisDuration) longestDuration = thisDuration;
+     }
+     document.getElementById("duration").innerHTML = longestDuration;
+  
    }
 }
 
