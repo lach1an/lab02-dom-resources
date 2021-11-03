@@ -13,28 +13,8 @@ $(document).ready(function(){
     $('#reset-btn').hide();
  
   // assign bear object on start
-  $('#start-btn').on('click', function start(){
-    
-    bear = new Bear();
-    makeBees();
-   
-   // disable start button to prevent bee spamming
-   $('#start-btn').attr('disabled', true);
-   
-   // show reset button
-   $('#reset-btn').show();
-   
-
-   // bind move function to keyup 
-   $(document).on("keyup", function(e){
-         // pass event to move
-          moveBear(e);
-     });
-
-     // inital call to start loop
-       updateBees();
-   
-  });
+  $('#start-btn').on('click', start());
+ 
       // reset game using params currently in inputs
    $('#reset-btn').on('click', restart());
       
@@ -70,7 +50,28 @@ $(document).ready(function(){
 });
 
 
+function start(){
+    
+    bear = new Bear();
+    makeBees();
+   
+   // disable start button to prevent bee spamming
+   $('#start-btn').attr('disabled', true);
+   
+   // show reset button
+   $('#reset-btn').show();
+   
 
+   // bind move function to keyup 
+   $(document).on("keyup", function(e){
+         // pass event to move
+          moveBear(e);
+     });
+
+     // inital call to start loop
+       updateBees();
+   
+};
 
 
 function Bear() {
