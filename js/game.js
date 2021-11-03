@@ -286,7 +286,6 @@ function moveBees() {
 function isHit(defender, offender) {
   
    if (overlap(defender, offender)) { //check if the two image overlap
-     console.log("hit");
      let score = $("#hits").html();
      score = Number(score) + 1; //increment the score
      $("#hits").html(score); //display the new score
@@ -302,7 +301,7 @@ function isHit(defender, offender) {
      if (longestDuration < thisDuration) longestDuration = thisDuration;
      }
     
-     let durRounded = Number(longestDuration/1000);
+     let durRounded = Number(longestDuration)/1000;
      console.log(durRounded);
      $('#duration').html(durRounded.toFixed(2));
   
