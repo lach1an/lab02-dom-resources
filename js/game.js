@@ -205,8 +205,8 @@ class Bee {
      this.y = this.bee.css('top');
      
      // remove units from returned values
-     this.x -= 'px';
-     this.y -= 'px';
+     this.x = parseInt(this.x);
+     this.y = parseInt(this.y);
      
      this.move = function(dx, dy) {
       
