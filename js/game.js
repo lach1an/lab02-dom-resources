@@ -21,6 +21,17 @@ $(document).ready(function(){
    $('#reset-btn').on('click', function(){
      restart();                 
    });
+ 
+ 
+  $('#add-bee').on('click', function()){
+    
+       //create bees 
+        let i = bees.length + 1;
+        var bee = new Bee(i); //create object and its IMG element
+        bee.display(); //display the bee
+        bees.push(bee); //add the bee object to the bees array
+            
+   });
       
   $("#dBear").on("blur", function(){
 
