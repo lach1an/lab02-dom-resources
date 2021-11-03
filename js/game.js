@@ -7,6 +7,8 @@
   lastStingTime = new Date();
   var updateTimer; 
 
+$(document).ready(function(){
+
   // assign bear object on start
   $('#start-btn').on('click', function start(){
     
@@ -14,6 +16,8 @@
     
     bear = new Bear();
     makeBees();
+   
+  });
       
 
       
@@ -42,7 +46,7 @@
     // inital call to start loop
       updateBees();
    
-  });
+});
 
 
 function Bear() {
