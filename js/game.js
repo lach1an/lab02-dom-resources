@@ -307,14 +307,14 @@ function overlap(element1, element2) {
   
    left1 = $(e1).offset().left; 
    top1 = $(e1).offset().top; 
-   right1 = $(e1).offset().left + element1.width(); 
-   bottom1 = $(e1).offset().top + element1.height(); 
+   right1 = $(e1).offset().left + $(e1).width(); 
+   bottom1 = $(e1).offset().top + $(e1).height(); 
    
   //rectangle of the second element
    left2 = $(e2).offset().left; 
    top2 = $(e2).offset().top; 
-   right2 = $(e2).offset().left + element2.width(); 
-   bottom2 = $(e2).offset().top + element2.height(); 
+   right2 = $(e2).offset().left + $(e2).width(); 
+   bottom2 = $(e2).offset().top + $(e2).height(); 
   
   //calculate the intersection of the two rectangles
    x_intersect = Math.max(0, Math.min(right1, right2) - Math.max(left1, left2));
