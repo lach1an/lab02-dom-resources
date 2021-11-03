@@ -9,6 +9,8 @@
 
 $(document).ready(function(){
     console.log('page loaded!!!');
+     // hide reset btn until; game start
+    $('#reset-btn').hide();
  
   // assign bear object on start
   $('#start-btn').on('click', function start(){
@@ -18,6 +20,9 @@ $(document).ready(function(){
    
    // disable start button to prevent bee spamming
    $('#start-btn').attr('disabled', true);
+   
+   // show reset button
+   $('#reset-btn').show();
    
 
    // bind move function to keyup 
@@ -30,8 +35,8 @@ $(document).ready(function(){
        updateBees();
    
   });
-      
-
+      // reset game using params currently in inputs
+   $('#reset-btn').on('click', restart());
       
   $("#dBear").on("blur", function(){
 
@@ -52,6 +57,20 @@ $(document).ready(function(){
 
    
 });
+
+
+function restart(){
+  
+  //end loop
+  clearTimeout(updateTimer);
+  
+  // remove all bees from board
+  $('.bee').remove();
+ 
+  // start game
+  start();
+ 
+}
 
 
 function Bear() {
