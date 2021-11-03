@@ -209,9 +209,6 @@ class Bee {
      this.y = parseInt(this.y);
      
      this.move = function(dx, dy) {
-      
-       console.log(this.id + ': x => ' + this.x);
-       console.log(this.id + ': y => ' + this.y);
        
        //move the bees by dx, dy
        this.x += dx;
