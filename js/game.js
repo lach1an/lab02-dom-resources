@@ -206,9 +206,7 @@ class Bee {
 
 function getRandomInt(max){
   
-  var x = Math.floor((Math.random() * max) + 1);
-  console.log(x);
-  return x;
+  return Math.floor((Math.random() * max) + 1);
   
 }
 
