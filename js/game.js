@@ -170,7 +170,7 @@ function Bear() {
        if (score >= 1000){
         clearTimeout(updateTimer);
         window.alert("GAME OVER"); // display best duration in popup
-         $("#hits").html('0');
+         restart();
        }
 
 
