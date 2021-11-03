@@ -111,10 +111,7 @@ function Bear() {
        updateTimer = setTimeout(updateBees(), period);
      }
     
-    
-    // call update to start loop
-    updateBees();
-
+   
   });
 
 
