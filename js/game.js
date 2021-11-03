@@ -11,6 +11,7 @@ $(document).ready(function(){
     console.log('page loaded!!!');
      // hide reset btn until game start
     $('#reset-btn').hide();
+    $('#add-bee').hide();
  
   // start game on btn press
   $('#start-btn').on('click', function(){
@@ -64,6 +65,7 @@ function start(){
    
    // show reset button
    $('#reset-btn').show();
+   $('#add-bee').show();
    
 
    // bind move function to keyup 
