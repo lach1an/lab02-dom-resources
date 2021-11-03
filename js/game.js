@@ -56,7 +56,11 @@ $(document).ready(function(){
 
 
 function start(){
-    
+     
+     // set score to zero
+     $("#hits").html(0);
+     $('#duration').html(0);
+ 
     bear = new Bear();
     makeBees();
    
@@ -87,7 +91,10 @@ function start(){
    // remove all bees from board
    $('.bee').remove();
   
-     //end loop
+   // remove all bees from array
+   bees.length = 0;
+  
+    //end loop
    clearTimeout(updateTimer);
 
    // start game
