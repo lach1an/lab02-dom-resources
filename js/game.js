@@ -300,10 +300,8 @@ function isHit(defender, offender) {
      } else {
      if (longestDuration < thisDuration) longestDuration = thisDuration;
      }
-    
-     let durRounded = (longestDuration.getTime()) / 1000;
-     console.log(durRounded);
-     $('#duration').html(durRounded.toFixed(2));
+  
+     $('#duration').html(longestDuration);
   
    }
 }
